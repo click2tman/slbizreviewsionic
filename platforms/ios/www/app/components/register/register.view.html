@@ -1,0 +1,85 @@
+<ion-view hide-back-button="true" title="Sign Up">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+  </ion-nav-buttons>
+
+  <ion-content>
+
+    <form name="register.registerForm" novalidate="" ng-submit="register.doRegister()">
+
+      <div class="list list-inset">
+
+
+        <label class="item item-input"
+               ng-class="{ 'has-error':  register.registerForm.name.$touched &&  register.registerForm.name.$invalid
+                                     ||  register.registerForm.name.$invalid && register.registerForm.$submitted}">
+
+          <input type="text"
+                 ng-model="register.registerData.name"
+                 placeholder="Username"
+                 name="name"
+                 set-valid-after-change="name-taken"
+                 name-taken
+                 required
+                 spellcheck="false">
+        </label>
+
+        <ng-messages class="form-errors"
+                     for="register.registerForm.name.$error"
+                     ng-if="register.registerForm.name.$touched &&  register.registerForm.name.$invalid || register.registerForm.name.$invalid && register.registerForm.$submitted">
+          <div class="form-error" ng-message="required">This field is required.</div>
+          <div class="form-error" ng-message="name-taken">This name is already taken.</div>
+        </ng-messages>
+
+        <label class="item item-input"
+               ng-class="{ 'has-error':  register.registerForm.mail.$touched &&  register.registerForm.mail.$invalid ||  register.registerForm.mail.$invalid && register.registerForm.$submitted}">
+
+          <input type="email"
+                 ng-model="register.registerData.mail"
+                 placeholder="Email"
+                 name="mail"
+                 required
+                 set-valid-after-change="email-taken"
+                 email-taken
+                 spellcheck="false">
+        </label>
+
+        <ng-messages class="form-errors"
+                     for="register.registerForm.mail.$error"
+                     ng-if="register.registerForm.mail.$touched &&  register.registerForm.mail.$invalid ||  register.registerForm.mail.$invalid && register.registerForm.$submitted">
+          <div class="form-error" ng-message="required">This field is required.</div>
+          <div class="form-error" ng-message="mail">This is no valid mail.</div>
+          <div class="form-error" ng-message="email-taken">This email is already taken.</div>
+        </ng-messages>
+
+
+        <label class="item item-input"
+               ng-class="{ 'has-error':  register.registerForm.pass.$touched && register.registerForm.pass.$invalid ||  register.registerForm.pass.$invalid && register.registerForm.$submitted}">
+          <input type="password"
+                 placeholder="Password"
+                 name="pass"
+                 ng-model="register.registerData.pass"
+                 required
+            >
+        </label>
+
+        <ng-messages class="form-errors"
+                     ng-if="register.registerForm.pass.$invalid && register.registerForm.pass.$touched"
+                     for="register.registerForm.pass.$error">
+          <div ng-message="required">This field is required.</div>
+        </ng-messages>
+
+        <button class="button button-block button-positive button-spinner">
+          <span ng-if="!register.registerIsPending">Sign Up</span>
+          <span ng-if="register.registerIsPending">Creating Account</span>
+          <ion-spinner ng-if="register.registerIsPending"></ion-spinner>
+        </button>
+
+        <a class="button button-block button-positive" ng-click="register.goToLogin(register.registerForm)">Sign In</a>
+
+      </div>
+
+    </form>
+  </ion-content>
+</ion-view>

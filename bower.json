@@ -1,0 +1,16 @@
+{
+  "name": "SLBizReviews Demo",
+  "version": "1.1.2",
+  "dependencies": {
+    "ionic": "driftyco/ionic-bower#~1.2",
+    "ng-drupal-7-services": "https://github.com/BioPhoton/ng-drupal-7-services.git#2.2.7",
+    "ngstorage": "~0.3.9",
+    "ngCordova": "~0.1",
+    "bower": "*",
+    "install": "~1.0.4",
+    "angular-messages": "ng-messages#*"
+  },
+  "resolutions": {
+    "angular": "1.4.10"
+  }
+}

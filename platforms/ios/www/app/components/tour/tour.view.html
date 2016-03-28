@@ -1,0 +1,47 @@
+<ion-view id="toutView" title="SLBizReviews">
+
+  <ion-nav-bar class="bar-dark">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="secondary">
+      <button id="skip" class="button button button-positive no-animation" ng-click="tour.start()">
+        Skip
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+
+<ion-pane>
+
+    <ion-slides  drag-content="false" class="ion-slides has-header"  options="tour.options" slider="tour.data.slider">
+      <ion-slide-page>
+        <h1>Welcome to SLBizReviews</h1>
+        <p>Sierra Leone Business Reviews (SLBizReviews)is a local business search engine</p>
+      </ion-slide-page>
+
+      <ion-slide-page>
+        <h1>What is SLBizReviews</h1>
+        <p>SLBizReviews is a local business search engine. SLBizReviews will help you find, rate and review nearby businesses when a friend or family recommendation is not available or not trusted</p>
+      </ion-slide-page>
+
+      <ion-slide-page>
+        <h1>Why Write a Review</h1>
+        <p>I am a customer and I want to share my good and bad experience to help other customers like me make informed purchasing decisions</p>
+      </ion-slide-page>
+
+      <ion-slide-page>
+        <h1>Why List Your Business</h1>
+        <p>To stay relevant, satisfy my customers, increase revenue, improve reputation and status, interact with my customers and its free to list and manage my business</p>
+      </ion-slide-page>
+
+      <ion-slide-page>
+        <h1>Getting started</h1>
+        <p>For best results, click on "Sign Up" to create an account. We will setup an account and log you into the app automatically.</p>
+      </ion-slide-page>
+
+    </ion-slides>
+
+</ion-pane>
+
+</ion-view>

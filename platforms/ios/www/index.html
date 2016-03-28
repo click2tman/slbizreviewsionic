@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="assets/css/ionic.app.css" rel="stylesheet">
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+
+
+    <!-- bower components -->
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ngstorage/ngStorage.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
+    <script src="lib/angular-messages/angular-messages.min.js"></script>
+
+    <!-- d7-services -->
+    <script src="lib/ng-drupal-7-services/dist/ng-drupal-7-services.js"></script>
+
+
+	<!-- app components -->
+	<script src="app/app.controller.js"></script>
+	<script src="app/components/tour/tour.controller.js"></script>
+	<script src="app/components/register/register.controller.js"></script>
+	<script src="app/components/login/login.controller.js"></script>
+	<script src="app/components/profile/profile.controller.js"></script>
+	<script src="app/components/profile/profile.service.js"></script>
+
+	<script src="app/components/articleFeed/articleFeed.service.js"></script>
+	<script src="app/components/articleFeed/articleFeed.controller.js"></script>
+	<script src="app/components/articleFeed/articleDetail/articleDetail.controller.js"></script>
+
+	<script src="app/commons/directives.toggleByOwnUid.js"></script>
+	<script src="app/commons/validation/validation.setValidAfterChange.js"></script>
+
+    <!-- your app's js -->
+    <script src="app/app.config.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/app.js"></script>
+  </head>
+  <body ng-app="drupalionicDemo">
+    <ion-nav-bar class="nav-title-slide-ios7 bar-light">
+        <ion-nav-back-button class="button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+  	<ion-nav-view></ion-nav-view>
+  </body>
+
+</html>
