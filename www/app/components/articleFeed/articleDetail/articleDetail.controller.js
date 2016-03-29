@@ -19,6 +19,9 @@
     vm.savingNewComment = false;
     vm.newCommentData = {};
 
+    vm.loadComments = loadComments;
+    vm.createComment = createComment;
+
     //vm.user = undefined;
     vm.pathToUserImg = false;
 
@@ -39,8 +42,16 @@
      );
      }*/
 
+    init();
 
-    vm.loadComments = function () {
+    /////
+
+    function init() {
+      loadComments();
+    }
+
+
+    function loadComments() {
      vm.loadingComments = true;
        ArticleFeedService
          .loadComments(vm.nid)
@@ -54,13 +65,14 @@
          });
      }
 
-     vm.createComment = function() {
+    function createComment() {
 
        //@TODO create images and rating data here
        //for now rating is static in articleService
        ArticleFeedService
          .createComment(vm.nid, vm.newCommentData)
          .finally(function() {
+           loadComments();
            vm.savingNewComment = false;
          });
      }
