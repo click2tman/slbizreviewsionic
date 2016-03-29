@@ -313,51 +313,6 @@
       }
     };
 
-    function loadComments(nid){
-     var defered = $q.defer();
-
-      var data = {
-        nid : nid
-      };
-      NodeResource
-        .comments(data)
-          .then(
-            function(response) {
-
-              var commentsData = response.data;
-              defered.resolve(prepareComments(commentsData));
-           },
-           function(error) {
-             defered.reject(error);
-           }
-        );
-
-      return defered.promise;
-    }
-
-    //@TODO prepare image paths
-    function prepareComments(data) {
-      return data;
-    }
-
-    function createComment(nid, commentData) {
-      commentData.nid = nid;
-
-      commentData.comment_body = DrupalHelperService.structureField({"value": commentData.comment_body_value});
-      commentData.field_rating = DrupalHelperService.structureField({"rating": commentData.rating});
-
-
-      delete commentData.comment_body_value;
-
-      return CommentResource
-        .create(commentData)
-        .then(
-          function(respones){
-            return $q.resolve(respones.data.nid);
-          }
-        );
-    }
-
   }
 
 

@@ -59,7 +59,6 @@
      vm.createComment = function() {
 
 
-
        //@TODO create images and rating data here
        vm.newCommentData.rating = 100;
        //for now rating is static in articleService
