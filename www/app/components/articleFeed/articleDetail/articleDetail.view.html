@@ -26,7 +26,51 @@
         <p>
           {{articleDetail.body.und[0].value}}
         </p>
+        <p>
+          <a ng-click="articleDetail.loadComments(articleDetail.nid)">
+            {{articleDetail.comment}} Comment{{articleDetail.comment > 1?'s':''}} <ion-spinner ng-if="articleDetail.loadingComments"  class="spinner-small" ></ion-spinner></a>
+        </p>
       </div>
+
+      <label class="item item-input">
+          <input type="text" placeholder="Subject"
+                    ng-model="articleDetail.newCommentData.subject" />
+      </label>
+
+      <label class="item item-input">
+          <textarea rows="6" placeholder="Body" type="text"
+                    ng-model="articleDetail.newCommentData.comment_body_value"></textarea>
+      </label>
+
+      <div class="item">
+        <button class="button button-clean" ng-click="articleDetail.createComment()">Reply</button>
+      </div>
+
+      <div ng-repeat="comment in articleDetail.comments" class="card">
+        <div class="item item-divider">
+          {{comment.subject}}
+        </div>
+        <div class="item item-text-wrap">
+          {{comment.comment_body.und[0].value}}
+        </div>
+        <div class="item">
+          Rating: {{comment.field_rating}}
+        </div>
+        <div class="row">
+          <div class="col-25">
+            {{comment.field_comment_photos}}
+          </div>
+        </div>
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" href="#">
+          <i class="icon ion-chatbox"></i>
+          Comment
+        </a>
+      </div>
+
+
     </div>
 
 
