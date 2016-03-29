@@ -344,12 +344,11 @@
       commentData.nid = nid;
 
       commentData.comment_body = DrupalHelperService.structureField({"value": commentData.comment_body_value});
-      commentData.field_rating = DrupalHelperService.structureField({"rating": 100});
+      commentData.field_rating = DrupalHelperService.structureField({"rating": commentData.rating});
 
 
       delete commentData.comment_body_value;
 
-      console.log(commentData);
       return CommentResource
         .create(commentData)
         .then(

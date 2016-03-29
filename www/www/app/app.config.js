@@ -12,7 +12,8 @@
   /** @ngInject */
   function configFunction(DrupalApiConstant) {
     //drupal services configurations
-    DrupalApiConstant.drupal_instance = 'http://dev-ionic-demo.pantheonsite.io/';
+
+    console.log(DrupalApiConstant.drupal_instance);
     DrupalApiConstant.api_endpoint = DrupalApiConstant.api_endpoint+'v1/';
   };
 

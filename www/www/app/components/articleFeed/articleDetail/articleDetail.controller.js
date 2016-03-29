@@ -24,6 +24,8 @@
 
     //vm.comments = [];
 
+    vm.loadComments();
+
     vm.pathToImg = (articleDetail.field_image.und) ? DrupalHelperService.getPathToImgByStyle('large') + articleDetail.field_image.und[0].uri.split('//')[1] : false;
 
     /*if(vm.article.uid) {
@@ -56,11 +58,15 @@
 
      vm.createComment = function() {
 
+
+
        //@TODO create images and rating data here
+       vm.newCommentData.rating = 100;
        //for now rating is static in articleService
        ArticleFeedService
          .createComment(vm.nid, vm.newCommentData)
          .finally(function() {
+           vm.loadComments();
            vm.savingNewComment = false;
          });
      }
