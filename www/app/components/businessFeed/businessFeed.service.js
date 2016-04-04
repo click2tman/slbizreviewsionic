@@ -19,7 +19,7 @@
 
     //Options for indexing nodes
     var viewsOptions = {};
-    viewsOptions.view_name = 'biz_services_view';
+    viewsOptions.view_name = 'testview';
     viewsOptions.page = 0;
     viewsOptions.pagesize = 25;
     viewsOptions.format_output = '0';
@@ -68,19 +68,7 @@
 
       return defer.promise;
     }
-/*
-    <p>Rating: {{article.field_slbiz_rating}}</p>
-    <p>Category: {{article.field_slbiz_category}}</p>
-    <p>Keyword: {{article.field_slbiz_keyword}}</p>
-    <p>Chiefdom: {{article.field_slbiz_regional_location}}</p>
-    <p>Address: {{article.field_slbiz_postal_address}}</p>
-    <p>Phone: {{article.field_slbiz_phone}}</p>
-    <p>Email: {{article.field_slbiz_email}}</p>
-    <p>Hours: {{article.field_slbiz_hours}}</p>
-    <p>Website: {{article.field_slbiz_website}}</p>
-    <p>Banner: {{article.field_slbiz_banner}}</p>
-    <p>Geocode: {{field_slbiz_geocode}}</p>
-  */
+
 
     //prepare article after fetched from server
     function prepareArticle(article) {
@@ -93,15 +81,6 @@
        });
 
      }
-     if("field_slbiz_banner" in article && "und" in article.field_slbiz_banner) {
-      angular.forEach(article.field_slbiz_banner.und, function (value, key) {
-
-        var imgPath = article.field_slbiz_banner.und[key].uri.split('//')[1].replace(/^\/+/, "");
-        article.field_slbiz_banner.und[key].imgPath = DrupalHelperService.getPathToImgByStyle(DrupalApiConstant.imageStyles.medium) + imgPath;
-        article.nid = parseInt(article.nid);
-      });
-
-    }
 
      return article;
     }
@@ -251,7 +230,7 @@
       return trySaveOptionalImage()
         .then(
         function (result) {
-          preparedArticle.field_slbiz_banner = DrupalHelperService.structureField({fid: result.data.fid});
+          preparedArticle.field_image = DrupalHelperService.structureField({fid: result.data.fid});
         },
         function (error) {
           //resolve without image
@@ -272,10 +251,10 @@
       // - rejects if saving image fails or no image given
       function trySaveOptionalImage() {
         //if data is given
-        if (preparedArticle.field_slbiz_banner.base64) {
+        if (preparedArticle.field_image.base64) {
 
-          var imgData = preparedArticle.field_slbiz_banner.base64;
-          delete preparedArticle.field_slbiz_banner.base64;
+          var imgData = preparedArticle.field_image.base64;
+          delete preparedArticle.field_image.base64;
 
           var newImage = {};
 
@@ -365,7 +344,7 @@
       commentData.nid = nid;
 
       commentData.comment_body = DrupalHelperService.structureField({"value": commentData.comment_body_value});
-      commentData.field_slbiz_rating = DrupalHelperService.structureField({"rating": 100});
+      commentData.field_rating = DrupalHelperService.structureField({"rating": 100});
 
 
       delete commentData.comment_body_value;

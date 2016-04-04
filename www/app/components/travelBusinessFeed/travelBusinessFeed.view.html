@@ -1,4 +1,4 @@
-<ion-view title="Find a Business">
+<ion-view title="Acticle Feed">
 
   <ion-nav-bar>
 
@@ -29,17 +29,6 @@
         <img ng-src="{{article.field_image.und[0].imgPath}}"/>
 
         <h2>{{article.title}}</h2>
-<p>Rating: {{article.field_slbiz_rating}}</p>
-<p>Category: {{article.field_slbiz_category}}</p>
-<p>Keyword: {{article.field_slbiz_keyword}}</p>
-<p>Chiefdom: {{article.field_slbiz_regional_location}}</p>
-<p>Address: {{article.field_slbiz_postal_address}}</p>
-<p>Phone: {{article.field_slbiz_phone}}</p>
-<p>Email: {{article.field_slbiz_email}}</p>
-<p>Hours: {{article.field_slbiz_hours}}</p>
-<p>Website: {{article.field_slbiz_website}}</p>
-<p>Banner: {{article.field_slbiz_banner}}</p>
-<p>Geocode: {{field_slbiz_geocode}}</p>
 
         <p>{{article.created * 1000 | date:'dd.MM.yyyy hh:mm:ss'}}</p>
 

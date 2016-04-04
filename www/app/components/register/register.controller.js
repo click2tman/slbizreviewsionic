@@ -15,11 +15,12 @@
     var vm = this;
 
     //data for vm.registerForm
-    vm.registerData = {
-      name: 'slbiz-demo-user',
-      mail: 'click2tman+slbiz-demo-user@gmail.com',
-      pass: 'slbiz-demo-user'
-    };
+    //vm.registerData = {
+    //  name: 'demo-user',
+    //  mail: 'click2tman+demo-user@gmail.com',
+    //  pass: 'demo-user',
+    //  field_user_nickname: 'Demo Nickname'
+    //};
 
     vm.registerIsPending = false;
 
@@ -53,7 +54,7 @@
           //login
           .then(
           function (data) {
-            console.log(data); 
+            console.log(data);
             vm.registerIsPending = false;
             //reset form
             vm.registerData = {};

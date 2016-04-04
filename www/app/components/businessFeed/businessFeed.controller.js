@@ -107,7 +107,7 @@
 
         navigator.camera.getPicture(
           function (result) {
-            vm.newArticle.field_slbiz_banner.base64 = result;
+            vm.newArticle.field_image.base64 = result;
             $scope.$apply();
           },
           function (err) {
@@ -126,10 +126,10 @@
 
       //setup drupal field structure
       vm.newArticle = angular.extend(vm.newArticle, {
-          //type: 'slbiz_business',
-        //title: 'Title...',
-        //body: DrupalHelperService.structureField({'value': 'full', 'summary': 'summ'}),
-          field_slbiz_banner: {base64: false}
+          type: 'article',
+          title: 'Title...',
+          body: DrupalHelperService.structureField({'value': 'full', 'summary': 'summ'}),
+          field_image: {base64: false}
         }
       );
 
@@ -155,7 +155,7 @@
         function (findata) {
 
           //update view
-          vm.newArticle.field_slbiz_banner.base64 = false;
+          vm.newArticle.field_image.base64 = false;
           vm.createModal.hide();
           vm.savingArticle = false;
         }

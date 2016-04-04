@@ -1,21 +1,13 @@
 <ion-view title="{{articleDetail.viewTitle || 'Detail'}}">
 
-  <ion-nav-bar>
-    <ion-nav-buttons side="left">
-      <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
-    </ion-nav-buttons>
+  <ion-nav-bar class="bar-dark">
 
-    <ion-nav-buttons side="right">
-      <button toggle-by-accesslevel="{{app.accessLevels.user}}" style="color:#0779bf"
-              class="button button-icon icon no-animation ion-ios-plus" ng-click="articleFeed.openCreateModal()">
-      </button>
-      <button toggle-by-accesslevel="{{app.accessLevels.admin}}"
-              class="button button-icon icon no-animation {{articleFeed.deleteVisible?'ion-ios-minus':'ion-ios-minus-outline'}}"
-              ng-click="articleFeed.deleteVisible = !articleFeed.deleteVisible">
-      </button>
-    </ion-nav-buttons>
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c"></i>
+    </ion-nav-back-button>
+
+
   </ion-nav-bar>
-
 
 
   <ion-content>

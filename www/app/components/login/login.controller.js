@@ -13,10 +13,10 @@
     var vm = this;
 
     //data for vm.loginForm
-    vm.loginData = {
-      username: 'slbiz-demo-user',
-      password: 'slbiz-demo-user'
-    };
+    //vm.loginData = {
+    //  username: 'slbiz-demo-user',
+    //  password: 'slbiz-demo-user'
+    //};
 
     vm.loginIsPending = false;
 

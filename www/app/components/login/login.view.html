@@ -17,7 +17,7 @@
 
           <input type="text"
                  ng-model="login.loginData.username"
-                 placeholder="Usernam"
+                 placeholder="username"
                  name="username"
                  required
                  set-valid-after-change="inactive-or-blocked"
@@ -28,7 +28,7 @@
         <ng-messages class="form-errors"
                      for="login.loginForm.username.$error"
                      ng-if="login.loginForm.username.$touched &&  login.loginForm.username.$invalid ||  login.loginForm.username.$invalid && login.loginForm.$submitted">
-          <div class="form-error" ng-message="required">This field is required.</div>
+          <div class="form-error" ng-message="required">All fields are required.</div>
           <div class="form-error" ng-message="inactive-or-blocked">"The username {{login.loginData.username}} has not been activated or is blocked.</div>
         </ng-messages>
 
@@ -47,8 +47,8 @@
         <ng-messages class="form-errors"
                      for="login.loginForm.password.$error"
                      ng-if="login.loginForm.password.$touched &&  login.loginForm.password.$invalid">
-          <div class="form-error" ng-message="required">This field is required.</div>
-          <div class="form-error" ng-message="password">This is no valid password.</div>
+          <div class="form-error" ng-message="required">This is not a valid username.</div>
+          <div class="form-error" ng-message="password">This is not a valid password.</div>
         </ng-messages>
 
 
